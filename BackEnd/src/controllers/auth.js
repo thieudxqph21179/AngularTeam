@@ -44,41 +44,41 @@ export const signup = async (req, res) => {
 };
 
 export const signin = async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        const { error } = SigninSchema.validate(req.body, { abortEarly: false });
-        if (error) {
-            const errors = error.details.map((err) => err.message);
-            return res.status(400).json({
-                message: errors,
-            });
-        }
+    // try {
+    //     const { email, password } = req.body;
+    //     const { error } = SigninSchema.validate(req.body, { abortEarly: false });
+    //     if (error) {
+    //         const errors = error.details.map((err) => err.message);
+    //         return res.status(400).json({
+    //             message: errors,
+    //         });
+    //     }
 
-        const user = await User.findOne({ email });
-        if (!user) {
-            return res.status(404).json({
-                message: 'Tài khoản không tồn tại',
-            });
-        }
+    //     const user = await User.findOne({ email });
+    //     if (!user) {
+    //         return res.status(404).json({
+    //             message: 'Tài khoản không tồn tại',
+    //         });
+    //     }
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            return res.status(400).json({
-                message: 'Mật khẩu không đúng',
-            });
-        }
+    //     const isMatch = await bcrypt.compare(password, user.password);
+    //     if (!isMatch) {
+    //         return res.status(400).json({
+    //             message: 'Mật khẩu không đúng',
+    //         });
+    //     }
 
-        const token = jwt.sign({ id: user._id}, 'hahaaa', {expiresIn: '1d'})
+    //     const token = jwt.sign({ id: user._id}, 'hahaaa', {expiresIn: '1d'})
 
-        return res.status(201).json({
-            message: 'Đăng nhập thành công',
-            accessToken: token,
-            user,
-        });
-    } catch (error) {
-        return res.status(400).json({
-            message: error,
-        });
-    }
+    //     return res.status(201).json({
+    //         message: 'Đăng nhập thành công',
+    //         accessToken: token,
+    //         user,
+    //     });
+    // } catch (error) {
+    //     return res.status(400).json({
+    //         message: error,
+    //     });
+    // }
 };
 

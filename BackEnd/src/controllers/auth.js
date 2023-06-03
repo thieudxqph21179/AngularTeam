@@ -7,12 +7,12 @@ export const signup = async (req, res) => {
     try {
         const { name, email, password } = req.body;
         const { error } = SignupSchema.validate(req.body, { abortEarly: false });
-        if (error) {
-            const errors = error.details.map((err) => err.message);
-            return res.status(400).json({
-                message: errors,
-            });
-        }
+        // if (error) {
+        //     const errors = error.details.map((err) => err.message);
+        //     return res.status(400).json({
+        //         message: errors,
+        //     });
+        // }
 
         const userExist = await User.findOne({ email });
         if (userExist) {

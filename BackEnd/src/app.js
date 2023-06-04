@@ -15,5 +15,5 @@ app.use('/api', categoryRouter);
 app.use('/api', authRouter);
 
 // mongoose.connect("mongodb://localhost:27017/we17303");
-mongoose.connect('mongodb://127.0.0.1:27017/we17303');
+mongoose.connect('mongodb://127.0.0.1:27017/Book');
 export const viteNodeApp = app;

@@ -2,7 +2,8 @@ import User from '../model/user';
 import bcrypt from 'bcryptjs';
 import { SigninSchema, SignupSchema } from '../schamas/auth';
 import jwt  from 'jsonwebtoken';
-
+//hahahaha
+//hahaha
 export const signup = async (req, res) => {
     try {
         const { name, email, password } = req.body;

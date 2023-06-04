@@ -7,21 +7,22 @@ const productsSchema = mongoose.Schema(
             type: String,
             require: true,
         },
+        author: {
+            type: String,
+        },
         price: Number,
-        image: 
-        {
+        image: {
+            type: String,
+        },
+        quantity: Number,
+        description: {
             type: String,
             require: true,
         },
-        description: 
-        {
-            type: String,
-            require: true,
-        },
-        categoryId: {
-            type: mongoose.Types.ObjectId,
-            ref: 'Category',
-        },
+        // categoryId: {
+        //     type: mongoose.Types.ObjectId,
+        //     ref: 'Category',
+        // },
     },
     { timestamps: true, versionKey: false },
 );

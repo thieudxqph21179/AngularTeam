@@ -4,9 +4,11 @@ import Category from '../model/category';
 
 const productsSchema = Joi.object({
     name: Joi.string().required(),
+    author: Joi.string().required(),
     price: Joi.number().required(),
+    quantity: Joi.number().required(),
     description: Joi.string(),
-    categoryId: Joi.string().required(),
+    // categoryId: Joi.string().required(),
 });
 
 export const getAll = async (req, res) => {

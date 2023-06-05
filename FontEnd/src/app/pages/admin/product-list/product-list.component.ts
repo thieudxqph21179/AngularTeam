@@ -45,14 +45,19 @@ export class ProductListComponent {
 
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(
-      (data) => {
-        this.products = data;
-        console.log(data);
+      (data:any) => {
+        this.products = data.docs;
+        console.log(data.docs);
         
       },
       (error) => {
         console.log(error.message);
       }
     );
+  }
+  removeItem(id: any) {
+    this.productService.deleteProduct(id).subscribe(() => {
+      console.log('delete thanhf cong')
+    })
   }
 }

@@ -1,0 +1,66 @@
+<!-- <h1 style="text-align: center; margin-bottom: 20px;">Danh sách sản phẩm</h1>
+<a routerLink="/add">
+  <button style="margin-bottom: 20px;" type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên sách</th>
+      <th scope="col">Tác giả</th>
+      <th scope="col">Giá</th>
+      <th scope="col">Ảnh</th>
+      <th scope="col">Số lượng</th>
+      <th scope="col">Mô tả</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.author }}</td>
+      <td>{{ product.price }}</td>
+      <td><img [src]="product.img" alt="" /></td>
+      <td>{{ product.quantity }}</td>
+      <td>{{ product.description }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="removeItem(product.id)">
+          Xóa
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+<h1 style="text-align: center; margin-bottom: 20px;">Danh sách sản phẩm</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên sách</th>
+      <th scope="col">Tác giả</th>
+      <th scope="col">Giá</th>
+      <th scope="col">Ảnh</th>
+      <th scope="col">Số lượng</th>
+      <th scope="col">Mô tả</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.author }}</td>
+      <td>{{ product.price }}</td>
+      <td><img [src]="product.img" alt="" /></td>
+      <td>{{ product.quantity }}</td>
+      <td>{{ product.description }}</td>
+      <td>
+        <!-- Nơi để các nút hoạt động, ví dụ: Xóa sản phẩm -->
+      </td>
+    </tr>
+  </tbody>
+</table>

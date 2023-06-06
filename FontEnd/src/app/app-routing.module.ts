@@ -8,6 +8,8 @@ import { WebsiteLayoutComponent } from './layout/website-layout/website-layout.c
 import { HomePageComponent } from './pages/client/home-page/home-page.component';
 import { ProductsPageComponent } from './pages/client/products-page/products-page.component';
 import { ProductComponent } from './pages/client/product/product.component';
+import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
+import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 
 const routes: Routes = [
   {
@@ -18,16 +20,19 @@ const routes: Routes = [
       { path: 'product', component: ProductListComponent },
       { path: 'product/add', component: ProductAddComponent },
       { path: 'product/:id/edit', component: ProductEditComponent },
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: AdminLayoutComponent },
+      { path: 'category', component: CategoryListComponent },
+      { path: 'category/add', component: CategoryAddComponent },
+      
     ],
   },
   {
-    path: "", component: WebsiteLayoutComponent, children: [
-      { path: "", component: HomePageComponent },
-      { path: "products", component: ProductsPageComponent },
-      { path: "product/:id", component: ProductComponent }
-    ]
+    path: '',
+    component: WebsiteLayoutComponent,
+    children: [
+      { path: '', component: HomePageComponent },
+      { path: 'products', component: ProductsPageComponent },
+      { path: 'product/:id', component: ProductComponent },
+    ],
   },
 ];
 

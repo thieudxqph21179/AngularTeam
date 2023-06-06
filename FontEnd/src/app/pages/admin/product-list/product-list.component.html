@@ -1,6 +1,9 @@
-
-<h1 style="text-align: center; margin-bottom: 20px;">Danh sách sản phẩm</h1>
-
+<h1 style="text-align: center; margin-bottom: 20px">Danh sách sản phẩm</h1>
+<a routerLink="add">
+  <button style="margin-bottom: 20px" type="submit" class="btn btn-primary">
+    Thêm sản phẩm
+  </button>
+</a>
 <table class="table">
   <thead>
     <tr>
@@ -24,12 +27,9 @@
       <td>{{ product.quantity }}</td>
       <td>{{ product.description }}</td>
       <td>
-        <button
-        class="btn btn-danger"
-        (click)="removeItem(product._id)!"
-    >
-        Xóa
-    </button>
+        <button class="btn btn-danger" (click)="removeItem(product._id)!">
+          Xóa
+        </button>
         <!-- Nơi để các nút hoạt động, ví dụ: Xóa sản phẩm -->
       </td>
     </tr>

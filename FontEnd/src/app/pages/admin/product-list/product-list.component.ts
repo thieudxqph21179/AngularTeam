@@ -35,20 +35,16 @@ import { IProduct } from 'src/app/interface/Product';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
-  // @Input() products: IProduct[] = [];
-  // @Output() onRemove = new EventEmitter<number>();
-
   products: IProduct[] = [];
 
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(
-      (data:any) => {
+      (data: any) => {
         this.products = data.docs;
         console.log(data.docs);
-        
       },
       (error) => {
         console.log(error.message);
@@ -57,7 +53,7 @@ export class ProductListComponent {
   }
   removeItem(id: any) {
     this.productService.deleteProduct(id).subscribe(() => {
-      console.log('delete thanhf cong')
-    })
+      console.log('delete thanhf cong');
+    });
   }
 }

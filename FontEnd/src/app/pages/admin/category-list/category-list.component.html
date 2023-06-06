@@ -1,0 +1,25 @@
+<h1 style="text-align: center; margin-bottom: 20px">Danh mục sản phẩm</h1>
+<a routerLink="add">
+  <button style="margin-bottom: 20px" type="submit" class="btn btn-primary">
+    Thêm danh mục
+  </button>
+</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên danh mục</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let categories of category; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ categories.name }}</td>
+      
+      <td>
+        <!-- Nơi để các nút hoạt động, ví dụ: Xóa sản phẩm -->
+      </td>
+    </tr>
+  </tbody>
+</table>

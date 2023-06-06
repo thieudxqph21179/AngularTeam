@@ -1,6 +1,4 @@
 
-
-
 <body id="page-top">
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -30,6 +28,13 @@
       </li>
 
       <li class="nav-item">
+        <a class="nav-link" routerLink="category">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Danh mục</span></a
+        >
+      </li>
+      
+      <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Khách hàng</span></a
@@ -43,13 +48,6 @@
         >
       </li>
 
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a
-        >
-      </li>
     </ul>
 
     <div id="content-wrapper" class="d-flex flex-column">
@@ -179,13 +177,10 @@
             </li>
           </ul>
         </nav>
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container" style="margin: 0 0px 30px 0px ;">
+        
+        <div class="container-fluid" style="margin: 0 0px 30px 0px ;">
           <router-outlet></router-outlet>
         </div>
-        <!-- /.container-fluid -->
       </div>
 
       <footer class="sticky-footer bg-white">

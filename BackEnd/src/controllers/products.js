@@ -12,7 +12,7 @@ const productsSchema = Joi.object({
 });
 
 export const getAll = async (req, res) => {
-    const { _limit = 10, _sort = 'createAt', _order = 'asc', _page = 1 } = req.query;
+    const { _limit = 8, _sort = 'createAt', _order = 'asc', _page = 1 } = req.query;
     const options = {
         page: _page,
         limit: _limit,
@@ -38,7 +38,8 @@ export const getAll = async (req, res) => {
 export const get = async (req, res) => {
     try {
         const id = req.params.id;
-        const data = await Products.findOne({ _id: id }).populate('categoryId', '-_v');
+        const data = await Products.findOne({ _id: id })
+        // .populate('categoryId', '-_v');
         if (data.length === 0) {
             return res.status(200).json({
                 message: 'Không có sản phẩm',

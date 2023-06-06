@@ -27,6 +27,9 @@
       <td>{{ product.quantity }}</td>
       <td>{{ product.description }}</td>
       <td>
+        <button class="btn btn-danger" (click)="removeItem(product._id)!">
+          Xóa
+        </button>
         <!-- Nơi để các nút hoạt động, ví dụ: Xóa sản phẩm -->
       </td>
     </tr>

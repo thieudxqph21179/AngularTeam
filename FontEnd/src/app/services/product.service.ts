@@ -24,6 +24,6 @@ export class ProductService {
     return this.http.post<IProduct>(`http://localhost:8081/api/products`, product);
   }
   updateProduct(product: IProduct): Observable<IProduct> {
-    return this.http.patch<IProduct>(`http://localhost:3000/products/${product._id}`, product);
+    return this.http.patch<IProduct>(`http://localhost:8081/api/products/${product._id}`, product);
   }
 }

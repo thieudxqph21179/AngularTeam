@@ -41,7 +41,7 @@ export class ProductListComponent {
   products: IProduct[] = [];
 
   constructor(private productService: ProductService) {
-    this.productService.getProducts().subscribe(
+    this.productService.getProductsAdmin().subscribe(
       (data: any) => {
         this.products = data.docs;
         console.log(data.docs);

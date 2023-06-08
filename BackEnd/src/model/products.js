@@ -19,10 +19,10 @@ const productsSchema = mongoose.Schema(
             type: String,
             require: true,
         },
-        // categoryId: {
-        //     type: mongoose.Types.ObjectId,
-        //     ref: 'Category',
-        // },
+        categoryId: {
+            type: mongoose.Types.ObjectId,
+            ref: 'Category',
+        },
     },
     { timestamps: true, versionKey: false },
 );

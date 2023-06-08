@@ -12,10 +12,10 @@ import { ProductListComponent } from './pages/admin/product-list/product-list.co
 import { ProductService } from './services/product.service';
 import { WebsiteLayoutComponent } from './layout/website-layout/website-layout.component';
 import { HomePageComponent } from './pages/client/home-page/home-page.component';
-import { ProductsPageComponent } from './pages/client/products-page/products-page.component';
 import { ProductComponent } from './pages/client/product/product.component';
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
+import { CategoriesComponent } from './pages/client/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +26,10 @@ import { CategoryListComponent } from './pages/admin/category-list/category-list
     ProductListComponent,
     WebsiteLayoutComponent,
     HomePageComponent,
-    ProductsPageComponent,
     ProductComponent,
     CategoryAddComponent,
     CategoryListComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ const productsSchema = mongoose.Schema(
             require: true,
         },
         categoryId: {
-            type: mongoose.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'Category',
         },
     },
@@ -28,4 +28,4 @@ const productsSchema = mongoose.Schema(
 );
 productsSchema.plugin(mongoosePaginate);
 
-export default mongoose.model('Products', productsSchema);
+export default mongoose.model('Product', productsSchema);

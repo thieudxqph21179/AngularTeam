@@ -30,6 +30,11 @@
         <button class="btn btn-danger" (click)="removeItem(product._id)!">
           Xóa
         </button>
+        <a [routerLink]="[product._id, 'edit']">
+          <button class="btn btn-primary">
+            Sửa
+          </button>
+        </a>
         <!-- Nơi để các nút hoạt động, ví dụ: Xóa sản phẩm -->
       </td>
     </tr>

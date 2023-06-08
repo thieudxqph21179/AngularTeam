@@ -8,7 +8,8 @@ const productsSchema = Joi.object({
     price: Joi.number().required(),
     quantity: Joi.number().required(),
     description: Joi.string(),
-    // categoryId: Joi.string().required(),
+    image: Joi.string().required(),
+    categoryId: Joi.string().required(),
 });
 
 export const getAll = async (req, res) => {
@@ -38,7 +39,7 @@ export const getAll = async (req, res) => {
 export const get = async (req, res) => {
     try {
         const id = req.params.id;
-        const data = await Products.findOne({ _id: id })
+        const data = await Products.findOne({ _id: id });
         // .populate('categoryId', '-_v');
         if (data.length === 0) {
             return res.status(200).json({
@@ -56,20 +57,25 @@ export const get = async (req, res) => {
 export const create = async (req, res) => {
     try {
         const body = req.body;
+        const product = new Products({ ...body });
+        console.log(product);
         const { error } = productsSchema.validate(body);
         if (error) {
-            return res.json({
-                message: error.details[0].message,
+            return res.status(400).json({
+                message: error,
             });
         }
-        const product = await Products.create(body); 
+        // const product = await Products.create(body);
+        // const product = new Products({ ...body });
+        // console.log(product);
+        await product.save();
 
         await Category.findByIdAndUpdate(product.categoryId, {
             $addToSet: {
                 products: product._id,
             },
         });
-        if(product.length === 0) {
+        if (product.length === 0) {
             return res.status(400).json({
                 message: 'Thêm sản phẩm thất bại',
             });

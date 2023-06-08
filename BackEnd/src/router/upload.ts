@@ -14,7 +14,7 @@ const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
         folder: "ECMA",
-        format: "png",
+        format: "jpg",
     } as CloudinaryParams
 });
 

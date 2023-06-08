@@ -19,13 +19,13 @@ const productsSchema = mongoose.Schema(
             type: String,
             require: true,
         },
-        // categoryId: {
-        //     type: mongoose.Types.ObjectId,
-        //     ref: 'Category',
-        // },
+        categoryId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Category',
+        },
     },
     { timestamps: true, versionKey: false },
 );
 productsSchema.plugin(mongoosePaginate);
 
-export default mongoose.model('Products', productsSchema);
+export default mongoose.model('Product', productsSchema);

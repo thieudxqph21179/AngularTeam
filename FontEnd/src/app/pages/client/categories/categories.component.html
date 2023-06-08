@@ -1,0 +1,78 @@
+<div class="super_container" style="margin-top: 180px;">
+    
+    <div class="fs_menu_overlay"></div>
+    
+    <!-- Hamburger Menu -->
+    
+    
+    
+    <div class="container product_section_container">
+        <div class="row">
+            <div class="col-xl-3 product_section clearfix">
+    
+                <!-- Breadcrumbs -->
+    
+                <div class="breadcrumbs d-flex flex-row align-items-center">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="index.html"><i class="fa fa-angle-right"
+                                    aria-hidden="true"></i>Men's</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Sidebar -->
+    
+                <div class="sidebar">
+                    <div class="sidebar_section">
+                        <div class="sidebar_title">
+                            <h5>Product Category</h5>
+                        </div>
+                        <ul class="sidebar_categories">
+
+                            <li *ngFor="let category of categories; index as i" >
+                                <a routerLink="/category/{{category._id}}">{{category.name}}</a>
+                            </li>
+
+                        </ul>
+                    </div>
+    
+                    <!-- Price Range Filtering -->
+    
+    
+                </div>
+    
+                <!-- Main Content -->
+    
+    
+            </div>
+            <div class="col-xl-9 main_content">
+    
+                <!-- Products -->
+    
+                <div class="products_iso">
+                    <div class="row">
+                        <div class="col-xl-3" *ngFor="let product of products">
+    
+                            <div class="product-item men">
+                                <div class="product discount product_filter">
+                                    <div class="product_image">
+                                        <img src="./assets/website/images/product_1.png" alt="">
+                                    </div>
+                                    <div class="favorite favorite_left"></div>
+                                    
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a routerLink="/product/{{product._id}}">{{product.name}}</a></h6>
+                                        <div class="product_price">{{product.price}} đ</div>
+                                    </div>
+                                </div>
+                                <div class="red_button "><a routerLink="/product/{{product._id}}">Chi tiết sản phẩm</a></div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    

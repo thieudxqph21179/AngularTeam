@@ -13,7 +13,9 @@ export class ProductService {
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(`http://localhost:8081/api/products`);
   }
-
+  getProductsAdmin(): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(`http://localhost:8081/api/productss`);
+  }
   deleteProduct(id: any): Observable<IProduct> {
     return this.http.delete<IProduct>(`http://localhost:8081/api/products/${id}`);
   }

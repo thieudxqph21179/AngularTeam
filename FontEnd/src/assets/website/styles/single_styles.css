@@ -1112,11 +1112,11 @@ section
 }
 .add_to_cart_button
 {
-	height: 50px;
-	width: 270px;
-	margin-left: 19px;
+	height: 60px;
+	width: 100%;
+	
 	font-size: 12px !important;
-	margin-top: -6px;
+	
 }
 .product_favorite
 {

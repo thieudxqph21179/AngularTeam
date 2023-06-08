@@ -13,7 +13,9 @@ export class ProductService {
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(`http://localhost:8081/api/products`);
   }
-
+  getProductsAdmin(): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(`http://localhost:8081/api/productss`);
+  }
   deleteProduct(id: any): Observable<IProduct> {
     return this.http.delete<IProduct>(`http://localhost:8081/api/products/${id}`);
   }
@@ -33,4 +35,7 @@ export class ProductService {
   // updateProduct(product: IProduct): Observable<IProduct> {
   //   return this.http.patch<IProduct>(`http://localhost:3000/products/${product.id}`, product);
   // }
+  updateProduct(product: IProduct): Observable<IProduct> {
+    return this.http.patch<IProduct>(`http://localhost:8081/api/products/${product._id}`, product);
+  }
 }

@@ -35,7 +35,29 @@ export const getAll = async (req, res) => {
         });
     }
 };
-
+export const getAllAdmin = async (req, res) => {
+    const { _limit = 10000, _sort = 'createAt', _order = 'asc', _page = 1 } = req.query;
+    const options = {
+        page: _page,
+        limit: _limit,
+        sort: {
+            [_sort]: _sort == 'desc' ? -1 : 1,
+        },
+    };
+    try {
+        const data = await Products.paginate({}, options);
+        if (data.length == 0) {
+            return res.json({
+                message: 'Không có sản phẩm nào',
+            });
+        }
+        return res.json(data);
+    } catch (error) {
+        return res.status(400).json({
+            message: error,
+        });
+    }
+};
 export const get = async (req, res) => {
     try {
         const id = req.params.id;

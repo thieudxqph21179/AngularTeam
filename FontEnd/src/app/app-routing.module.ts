@@ -6,10 +6,10 @@ import { ProductAddComponent } from './pages/admin/product-add/product-add.compo
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { WebsiteLayoutComponent } from './layout/website-layout/website-layout.component';
 import { HomePageComponent } from './pages/client/home-page/home-page.component';
-import { ProductsPageComponent } from './pages/client/products-page/products-page.component';
 import { ProductComponent } from './pages/client/product/product.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
+import { CategoriesComponent } from './pages/client/categories/categories.component';
 
 const routes: Routes = [
   {
@@ -30,7 +30,8 @@ const routes: Routes = [
     component: WebsiteLayoutComponent,
     children: [
       { path: '', component: HomePageComponent },
-      { path: 'products', component: ProductsPageComponent },
+      { path: 'category/:id', component: CategoriesComponent },
+      { path: 'category', component: CategoriesComponent },
       { path: 'product/:id', component: ProductComponent },
     ],
   },

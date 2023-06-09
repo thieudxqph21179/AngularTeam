@@ -27,8 +27,8 @@
       <td><img [src]="product.image" alt="" width="150px" height="250px"/></td>
       <td>{{ product.quantity }}</td>
       <td>{{ product.description }}</td>
-      <td>{{ getCategoryName(product.categoryId) }}</td>
-      <!-- <td>{{product.categoryId}}</td> -->
+      <!-- <td>{{ getCategoryName(product.categoryId) }}</td> -->
+      <td>{{product.categoryId}}</td>
       <td>
         <button class="btn btn-danger" (click)="removeItem(product._id)!">
           Xóa

@@ -6,5 +6,5 @@ export interface IProduct {
     image?: string;
     quantity: number;
     description: string;
-    categoryId?:string;
+    categoryId?:string | number;
 }

@@ -50,7 +50,7 @@ export class ProductEditComponent {
           price: product.price,
           author: product.author,
           quantity: product.quantity,
-          categoryId: product.categoryId,
+          // categoryId: product.categoryId,
           description: product.description,
           image: product.image,
           

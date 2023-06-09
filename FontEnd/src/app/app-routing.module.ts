@@ -10,6 +10,7 @@ import { ProductComponent } from './pages/client/product/product.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 import { CategoriesComponent } from './pages/client/categories/categories.component';
+import { RegisterComponent } from './pages/client/register/register.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'category/:id', component: CategoriesComponent },
       { path: 'category', component: CategoriesComponent },
       { path: 'product/:id', component: ProductComponent },
+      { path: 'signup', component: RegisterComponent },
     ],
   },
 ];

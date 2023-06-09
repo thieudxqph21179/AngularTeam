@@ -17,7 +17,7 @@ export class ProductEditComponent {
     name: ['', [Validators.required, Validators.minLength(4)]],
     author: ['', [Validators.required, Validators.minLength(4)]],
     price: [0],
-    img: [''],
+    image: [''],
     quantity: [0],
     description: ['', [Validators.required, Validators.minLength(4)]],
   })
@@ -41,7 +41,7 @@ export class ProductEditComponent {
         name: product.name,
         author: product.author,
         price: product.price,
-        img: product.img,
+        image: product.image,
         quantity: product.quantity,
         description: product.description
       });
@@ -55,7 +55,7 @@ export class ProductEditComponent {
         name: this.productForm.value.name || '',
         author: this.productForm.value.author || '',
         price: this.productForm.value.price || 0,
-        img: this.productForm.value.img || '',
+        image: this.productForm.value.image || '',
         quantity: this.productForm.value.quantity || 0,
         description: this.productForm.value.description || '',
       };

@@ -4,11 +4,10 @@ import { Observable } from 'rxjs';
 import { IProduct } from 'src/app/interface/Product';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(`http://localhost:8081/api/products`);
@@ -17,25 +16,33 @@ export class ProductService {
     return this.http.get<IProduct[]>(`http://localhost:8081/api/productss`);
   }
   deleteProduct(id: any): Observable<IProduct> {
-    return this.http.delete<IProduct>(`http://localhost:8081/api/products/${id}`);
+    return this.http.delete<IProduct>(
+      `http://localhost:8081/api/products/${id}`
+    );
   }
   getProductById(id: any): Observable<IProduct> {
     return this.http.get<IProduct>(`http://localhost:8081/api/products/${id}`);
   }
   addProduct(product: IProduct): Observable<IProduct> {
-    return this.http.post<IProduct>(`http://localhost:8081/api/products`, product);
+    return this.http.post<IProduct>(
+      `http://localhost:8081/api/products`,
+      product
+    );
   }
 
   uploadImage(image: File): Observable<IProduct> {
     const formData = new FormData();
     formData.append('image', image);
-    return this.http.post<any>('http://localhost:8081/api/images/upload', formData);
+    return this.http.post<any>(
+      'http://localhost:8081/api/images/upload',
+      formData
+    );
   }
 
-  // updateProduct(product: IProduct): Observable<IProduct> {
-  //   return this.http.patch<IProduct>(`http://localhost:3000/products/${product.id}`, product);
-  // }
   updateProduct(product: IProduct): Observable<IProduct> {
-    return this.http.patch<IProduct>(`http://localhost:8081/api/products/${product._id}`, product);
+    return this.http.patch<IProduct>(
+      `http://localhost:8081/api/products/${product._id}`,
+      product
+    );
   }
 }

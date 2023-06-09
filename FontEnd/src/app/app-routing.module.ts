@@ -11,6 +11,7 @@ import { CategoryListComponent } from './pages/admin/category-list/category-list
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 import { CategoriesComponent } from './pages/client/categories/categories.component';
 import { SigninComponent } from './pages/client/signin/signin.component';
+import { RegisterComponent } from './pages/client/register/register.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
       { path: 'category', component: CategoriesComponent },
       { path: 'product/:id', component: ProductComponent },
       { path: 'signin', component: SigninComponent },
+      { path: 'signup', component: RegisterComponent },
     ],
   },
 ];

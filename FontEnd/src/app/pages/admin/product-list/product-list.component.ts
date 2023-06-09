@@ -46,8 +46,9 @@ export class ProductListComponent implements OnInit {
     );
   }
 
-  getCategoryName(categoryId: string): string {
-    const category = this.categories.find((c) => c._id === categoryId);
+  getCategoryName(categoryId: string | number | undefined): string {
+    const categoryIdStr = typeof categoryId === 'number' ? categoryId.toString() : categoryId as string;
+    const category = this.categories.find((c) => c._id === categoryIdStr);
     return category ? category.name : '';
   }
 

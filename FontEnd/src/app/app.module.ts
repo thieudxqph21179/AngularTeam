@@ -20,6 +20,8 @@ import { ProductComponent } from './pages/client/product/product.component';
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list.component';
 import { CategoriesComponent } from './pages/client/categories/categories.component';
+import { RegisterComponent } from './pages/client/register/register.component';
+import { UserListComponent } from './pages/admin/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { CategoriesComponent } from './pages/client/categories/categories.compon
     CategoryAddComponent,
     CategoryListComponent,
     CategoriesComponent,
+    RegisterComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
